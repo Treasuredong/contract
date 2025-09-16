@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>价格表页面</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #343a40;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .pricing {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .pricing-plan {
+            background: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-plan:hover {
+            transform: translateY(-10px);
+        }
+        
+        .popular {
+            border-top: 4px solid var(--accent);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .plan-price span {
+            font-size: 1rem;
+            color: #777;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .plan-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .plan-button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .plan-button:hover {
+            background: #2980b9;
+        }
+        
+        .accent-button {
+            background: var(--accent);
+        }
+        
+        .accent-button:hover {
+            background: #c0392b;
+        }
+        
+        .faq {
+            background: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+        
+        .faq-answer {
+            color: #666;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #666;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pricing-plan {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>选择适合您的计划</h1>
+            <p class="subtitle">我们提供灵活的价格方案，满足不同用户的需求。所有计划都包含30天退款保证。</p>
+        </header>
+        
+        <section class="pricing">
+            <div class="pricing-plan">
+                <h3 class="plan-name">基础版</h3>
+                <div class="plan-price">¥99 <span>/月</span></div>
+                <ul class="plan-features">
+                    <li>10个项目</li>
+                    <li>5GB存储空间</li>
+                    <li>基本分析</li>
+                    <li>电子邮件支持</li>
+                    <li>最多3个用户</li>
+                </ul>
+                <button class="plan-button">选择计划</button>
+            </div>
+            
+            <div class="pricing-plan popular">
+                <div class="popular-badge">最受欢迎</div>
+                <h3 class="plan-name">专业版</h3>
+                <div class="plan-price">¥199 <span>/月</span></div>
+                <ul class="plan-features">
+                    <li>无限项目</li>
+                    <li>50GB存储空间</li>
+                    <li>高级分析</li>
+                    <li>优先支持</li>
+                    <li>最多20个用户</li>
+                    <li>API访问</li>
+                </ul>
+                <button class="plan-button accent-button">选择计划</button>
+            </div>
+            
+            <div class="pricing-plan">
+                <h3 class="plan-name">企业版</h3>
+                <div class="plan-price">¥399 <span>/月</span></div>
+                <ul class="plan-features">
+                    <li>无限项目</li>
+                    <li>500GB存储空间</li>
+                    <li>高级分析报告</li>
+                    <li>24/7专属支持</li>
+                    <li>无限用户</li>
+                    <li>完整API访问</li>
+                    <li>自定义集成</li>
+                </ul>
+                <button class="plan-button">选择计划</button>
+            </div>
+        </section>
+        
+        <section class="faq">
+            <h2>常见问题</h2>
+            <div class="faq-item">
+                <div class="faq-question">我可以随时升级或降级我的计划吗？</div>
+                <div class="faq-answer">是的，您可以随时在账户设置中更改您的计划。升级会立即生效，降级会在当前结算周期结束时生效。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">是否有长期合同？</div>
+                <div class="faq-answer">不需要，我们的所有计划都是按月订阅的，您可以随时取消。我们还提供年度订阅选项，可享受2个月免费。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">是否提供免费试用？</div>
+                <div class="faq-answer">是的，我们提供14天免费试用，无需信用卡。您可以在试用期内体验所有功能。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">支持哪些支付方式？</div>
+                <div class="faq-answer">我们支持所有主要信用卡、PayPal和银行转账。企业客户还可以申请发票付款。</div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>有问题吗？请联系我们：support@example.com 或拨打 400-123-4567</p>
+            <p>&copy; 2023 公司名称. 保留所有权利.</p>
+        </footer>
+    </div>
+</body>
+</html>
